@@ -22,6 +22,9 @@
 			{{HTML::link(Session::get('link'), 'Click here for your shortened URL')}}
 		</h3>
 		@endif
+		@if(Session::has('message'))
+		<h3 class="error">{{Session::get('message')}}</h3>
+		@endif
 	</div>
 </body>
 </html>
