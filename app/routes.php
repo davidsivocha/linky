@@ -46,3 +46,14 @@ Route::post('/', function(){
 		}
 	}
 });
+
+Route::get('{hash}', function($hash){
+	//Check if the hash is from a url in our DB
+	$link = Link::where('hash','=',$hash)->first();
+	//If found, redirect to URL
+	if($link){
+		return Redirect::to($link->url);
+	} else {
+		return Redirect:to('/')->with('message', 'Invalid Link')
+	}
+})->where('hash', '[0-9a-zA-z]{6}');
