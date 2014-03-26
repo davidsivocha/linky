@@ -23,7 +23,7 @@ Route::post('/', function(){
 	);
 
 	//Run form validation
-	$validation = Validator::make(Inpute::all(),$rules);
+	$validation = Validator::make(Input::all(),$rules);
 
 	//if Validation fails return to '/' with an error
 	if($validation->fails()){
