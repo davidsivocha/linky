@@ -54,6 +54,6 @@ Route::get('{hash}', function($hash){
 	if($link){
 		return Redirect::to($link->url);
 	} else {
-		return Redirect:to('/')->with('message', 'Invalid Link')
+		return Redirect::to('/')->with('message', 'Invalid Link')
 	}
 })->where('hash', '[0-9a-zA-z]{6}');
