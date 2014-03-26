@@ -16,9 +16,10 @@
 			array('placeholder'=>'Insert your URL here and press enter!'))
 		}}
 		{{Form::close()}}
+		<br />
 		@if(Session::has('link'))
 		<h3 class="success">
-			{{Html::link(Session::get('link'), 'Click here for your shortened URL')}}
+			{{HTML::link(Session::get('link'), 'Click here for your shortened URL')}}
 		</h3>
 		@endif
 	</div>
